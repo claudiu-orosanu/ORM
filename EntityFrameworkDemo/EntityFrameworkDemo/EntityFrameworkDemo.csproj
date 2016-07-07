@@ -47,6 +47,7 @@
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Job.cs" />
     <Compile Include="Model\Location.cs" />
+    <Compile Include="Model\Address.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
