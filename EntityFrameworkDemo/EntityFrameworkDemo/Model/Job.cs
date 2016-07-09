@@ -1,13 +1,17 @@
-﻿namespace EntityFrameworkDemo.Model
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace EntityFrameworkDemo.Model
 {
-    public class Job
+    [Table("Job", Schema = "Hr")]
+    public class Job : Entity
     {
-        public long JobId { get; set; }
+        [Required]
+        [MaxLength(35)]
+        public virtual string JobTitle { get; set; }
 
-        public string JobTitle { get; set; }
+        public virtual decimal? MinSalary { get; set; }
 
-        public decimal? MinSalary { get; set; }
-
-        public decimal? MaxSalary { get; set; }
+        public virtual decimal? MaxSalary { get; set; }
     }
 }

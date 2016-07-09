@@ -1,15 +1,19 @@
-﻿namespace EntityFrameworkDemo.Model
-{
-    public class Location
-    {
-        public long? LocationId { get; set; }
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-        public string StreetAddress { get; set; }
-        
-        public string PostalCode { get; set; }
-        
-        public string City { get; set; }
-        
-        public string StateProvince { get; set; }
+namespace EntityFrameworkDemo.Model
+{
+    [Table("Location", Schema = "Hr")]
+    public class Location : Entity
+    {
+        public virtual string StreetAddress { get; set; }
+
+        public virtual string PostalCode { get; set; }
+
+        [Required]
+        [MaxLength(30)]
+        public virtual string City { get; set; }
+
+        public virtual string StateProvince { get; set; }
     }
 }

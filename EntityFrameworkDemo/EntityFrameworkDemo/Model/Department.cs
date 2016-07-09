@@ -1,11 +1,18 @@
-﻿namespace EntityFrameworkDemo.Model
-{
-    public class Department
-    {
-        public long DepartmentId { get; set; }
-        
-        public string DepartmentName { get; set; }
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-        public long? LocationId { get; set; }
+namespace EntityFrameworkDemo.Model
+{
+    [Table("Department", Schema = "Hr")]
+    public class Department : Entity
+    {
+        [Required]
+        [MaxLength(30)]
+        public virtual string DepartmentName { get; set; }
+
+
+        public virtual long? LocationId { get; set; }
+        [ForeignKey("LocationId")]
+        public virtual Location Location { get; set; }
     }
 }

@@ -33,7 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,6 +52,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity.cs" />
+    <Compile Include="HrContext\HrContext.cs" />
+    <Compile Include="Migrations\201607081606069_Initial.cs" />
+    <Compile Include="Migrations\201607081606069_Initial.Designer.cs">
+      <DependentUpon>201607081606069_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607091951325_RenameTables.cs" />
+    <Compile Include="Migrations\201607091951325_RenameTables.Designer.cs">
+      <DependentUpon>201607091951325_RenameTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607092010341_ForeignKeys.cs" />
+    <Compile Include="Migrations\201607092010341_ForeignKeys.Designer.cs">
+      <DependentUpon>201607092010341_ForeignKeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607092019106_MailUnique.cs" />
+    <Compile Include="Migrations\201607092019106_MailUnique.Designer.cs">
+      <DependentUpon>201607092019106_MailUnique.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Department.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Job.cs" />
@@ -51,7 +79,24 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201607081606069_Initial.resx">
+      <DependentUpon>201607081606069_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607091951325_RenameTables.resx">
+      <DependentUpon>201607091951325_RenameTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607092010341_ForeignKeys.resx">
+      <DependentUpon>201607092010341_ForeignKeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607092019106_MailUnique.resx">
+      <DependentUpon>201607092019106_MailUnique.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
