@@ -8,6 +8,7 @@ using EntityFrameworkDemo.Model;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Data.Entity.Infrastructure.Annotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using EntityFrameworkDemo.Model.Nomenclatures;
 
 namespace EntityFrameworkDemo.HrContext
 {
@@ -20,13 +21,17 @@ namespace EntityFrameworkDemo.HrContext
 
         private void Init()
         {
-            Configuration.LazyLoadingEnabled = false;
+            Configuration.LazyLoadingEnabled = true;
+            Configuration.ProxyCreationEnabled = true;
         }
 
         public DbSet<Job> Jobs { get; set; }
         public DbSet<Location> Locations { get; set; }
         public DbSet<Department> Department { get; set; }
         public DbSet<Employee> Employee { get; set; }
+        public DbSet<Level> Levels { get; set; }
+        public DbSet<Gender> Genders { get; set; }
+        public DbSet<Project> Projects { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -42,6 +47,16 @@ namespace EntityFrameworkDemo.HrContext
                         IndexAnnotation.AnnotationName,
                         new IndexAnnotation(
                             new IndexAttribute("UX_Email") { IsUnique = true }));
+
+            modelBuilder.Entity<Employee>()
+                .HasMany<Project>(s => s.Projects)
+                .WithMany(c => c.Employees)
+                .Map(cs =>
+                {
+                    cs.MapLeftKey("EmployeeId");
+                    cs.MapRightKey("ProjectId");
+                        cs.ToTable("EmployeeProject","Hr");
+                });
         }
 
         private void ApplyCustomConventions(DbModelBuilder modelBuilder)

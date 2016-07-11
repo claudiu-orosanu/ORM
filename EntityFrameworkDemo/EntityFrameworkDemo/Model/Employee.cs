@@ -1,6 +1,9 @@
 ﻿namespace EntityFrameworkDemo.Model
 {
+    using Nomenclatures;
     using System;
+    using System.Collections;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
@@ -41,5 +44,26 @@
         public virtual long? DepartmentId { get; set; }
         [ForeignKey("DepartmentId")]
         public virtual Department Department { get; set; }
+
+        public virtual long? LevelId { get; set; }
+        [ForeignKey("LevelId")]
+        public virtual Level Level { get; set; }
+
+        public virtual long? GenderId { get; set; }
+        [ForeignKey("GenderId")]
+        public virtual Gender Gender { get; set; }
+
+        [NotMapped]
+        public string GetFullName
+        {
+            get
+            {
+                return FirstName + " " + LastName;
+            }
+        }
+
+        public virtual ICollection<Project> Projects { get; set; }
+
+
     }
 }

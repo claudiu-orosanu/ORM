@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EntityFrameworkDemo.Model
@@ -14,5 +15,9 @@ namespace EntityFrameworkDemo.Model
         public virtual long? LocationId { get; set; }
         [ForeignKey("LocationId")]
         public virtual Location Location { get; set; }
+
+        [InverseProperty("Department")]
+        public virtual ICollection<Employee> Employees { get; set; }
+
     }
 }

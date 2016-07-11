@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EntityFrameworkDemo.Model
@@ -13,5 +14,7 @@ namespace EntityFrameworkDemo.Model
         public virtual decimal? MinSalary { get; set; }
 
         public virtual decimal? MaxSalary { get; set; }
+
+        
     }
 }

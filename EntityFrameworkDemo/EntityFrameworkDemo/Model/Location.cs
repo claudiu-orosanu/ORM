@@ -8,6 +8,7 @@ namespace EntityFrameworkDemo.Model
     {
         public virtual string StreetAddress { get; set; }
 
+        //[ConcurrencyCheck] atribut pentru concurenta pt fiecare camp explicit
         public virtual string PostalCode { get; set; }
 
         [Required]

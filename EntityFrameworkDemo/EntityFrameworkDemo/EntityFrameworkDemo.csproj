@@ -70,11 +70,49 @@
     <Compile Include="Migrations\201607092019106_MailUnique.Designer.cs">
       <DependentUpon>201607092019106_MailUnique.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607110722076_AddNomenclatures.cs" />
+    <Compile Include="Migrations\201607110722076_AddNomenclatures.Designer.cs">
+      <DependentUpon>201607110722076_AddNomenclatures.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607110748202_LazyLoadingTrue.cs" />
+    <Compile Include="Migrations\201607110748202_LazyLoadingTrue.Designer.cs">
+      <DependentUpon>201607110748202_LazyLoadingTrue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607110909409_AddProject.cs" />
+    <Compile Include="Migrations\201607110909409_AddProject.Designer.cs">
+      <DependentUpon>201607110909409_AddProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607110922234_AddManyToManyFk.cs" />
+    <Compile Include="Migrations\201607110922234_AddManyToManyFk.Designer.cs">
+      <DependentUpon>201607110922234_AddManyToManyFk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607110932085_AddRowVersion.cs" />
+    <Compile Include="Migrations\201607110932085_AddRowVersion.Designer.cs">
+      <DependentUpon>201607110932085_AddRowVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607110941267_CreateProcedureChangeManager.cs" />
+    <Compile Include="Migrations\201607110941267_CreateProcedureChangeManager.Designer.cs">
+      <DependentUpon>201607110941267_CreateProcedureChangeManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607111009381_AlterProcedureChangeManager.cs" />
+    <Compile Include="Migrations\201607111009381_AlterProcedureChangeManager.Designer.cs">
+      <DependentUpon>201607111009381_AlterProcedureChangeManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607111027441_CorectProcedureChangeMangare.cs" />
+    <Compile Include="Migrations\201607111027441_CorectProcedureChangeMangare.Designer.cs">
+      <DependentUpon>201607111027441_CorectProcedureChangeMangare.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\Gender.cs" />
     <Compile Include="Model\Department.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Job.cs" />
     <Compile Include="Model\Location.cs" />
+    <Compile Include="BaseNomEntity.cs" />
+    <Compile Include="Model\Nomenclatures\Gender.cs" />
+    <Compile Include="Model\Nomenclatures\Level.cs" />
+    <Compile Include="Model\Project.cs" />
+    <Compile Include="Model\tableAttribute.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -96,6 +134,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607092019106_MailUnique.resx">
       <DependentUpon>201607092019106_MailUnique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607110722076_AddNomenclatures.resx">
+      <DependentUpon>201607110722076_AddNomenclatures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607110748202_LazyLoadingTrue.resx">
+      <DependentUpon>201607110748202_LazyLoadingTrue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607110909409_AddProject.resx">
+      <DependentUpon>201607110909409_AddProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607110922234_AddManyToManyFk.resx">
+      <DependentUpon>201607110922234_AddManyToManyFk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607110932085_AddRowVersion.resx">
+      <DependentUpon>201607110932085_AddRowVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607110941267_CreateProcedureChangeManager.resx">
+      <DependentUpon>201607110941267_CreateProcedureChangeManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607111009381_AlterProcedureChangeManager.resx">
+      <DependentUpon>201607111009381_AlterProcedureChangeManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607111027441_CorectProcedureChangeMangare.resx">
+      <DependentUpon>201607111027441_CorectProcedureChangeMangare.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
